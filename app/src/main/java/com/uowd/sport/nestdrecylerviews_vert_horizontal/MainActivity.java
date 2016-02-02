@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MixCatalougeMainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
     private RecyclerView.Adapter verticalAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private RecyclerView myRecyclerView;
@@ -54,7 +54,7 @@ public class MixCatalougeMainActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         mProgBar.setVisibility(View.VISIBLE);
-        mProgBar.getIndeterminateDrawable().setColorFilter(ContextCompat.getColor(MixCatalougeMainActivity.this, R.color.ColorPrimary), android.graphics.PorterDuff.Mode.MULTIPLY);
+        mProgBar.getIndeterminateDrawable().setColorFilter(ContextCompat.getColor(MainActivity.this, R.color.ColorPrimary), android.graphics.PorterDuff.Mode.MULTIPLY);
         data = new ArrayList<>();
 
 
@@ -107,10 +107,10 @@ public class MixCatalougeMainActivity extends AppCompatActivity {
                                 for (int i = 0; i < 3; i++) {
                                     data.add(String.valueOf(i));
                                 }
-                                mLayoutManager = new LinearLayoutManager(MixCatalougeMainActivity.this);
+                                mLayoutManager = new LinearLayoutManager(MainActivity.this);
                                 myRecyclerView.addItemDecoration(new SpacesItemDecoration(10));
                                 myRecyclerView.setLayoutManager(mLayoutManager);
-                                verticalAdapter = new MyVerticalAdapter(MixCatalougeMainActivity.this, data,mImageArray,mImageArrayData);
+                                verticalAdapter = new MyVerticalAdapter(MainActivity.this, data,mImageArray,mImageArrayData);
                                 myRecyclerView.setAdapter(verticalAdapter);
                                 myRecyclerView.setVisibility(View.VISIBLE);
                                 mProgBar.setVisibility(View.INVISIBLE);
